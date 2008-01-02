@@ -15,6 +15,7 @@ Group:		Office
 URL:		http://sourceforge.net/projects/wvware/
 Source0: 	http://downloads.sourceforge.net/wvware/%{name}-%{version}.tar.bz2
 BuildRequires:	libgsf-devel
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
 wvWare is the continuation of Caolan McNamara's wv - the MSWord library.
