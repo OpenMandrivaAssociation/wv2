@@ -13,6 +13,8 @@ License:	LGPLv2
 Group:		Office
 URL:		http://sourceforge.net/projects/wvware/
 Source0: 	http://downloads.sourceforge.net/wvware/%{name}-%{version}.tar.bz2
+Patch0:		wv2-0.2.3-gcc43.patch
+Patch1:		wv2-0.2.3-respectflags.patch
 BuildRequires:	libgsf-devel
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 
@@ -46,14 +48,17 @@ This is the Wv2 development package.
 
 %prep
 %setup -q
+%patch0 -p0
+%patch1 -p1
 
 %build
+./autogen.sh
 %configure2_5x
 %make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%makeinstall
+%makeinstall_std
 
 %multiarch_binaries $RPM_BUILD_ROOT%{_bindir}/wv2-config
 
