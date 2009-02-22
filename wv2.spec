@@ -1,7 +1,7 @@
 %define name	wv2
-%define version	0.2.3
+%define version	0.3.0
 
-%define major		1
+%define major		2
 %define libname		%mklibname %{name}_ %major
 %define develname	%mklibname %{name} -d
 
@@ -13,7 +13,6 @@ License:	LGPLv2
 Group:		Office
 URL:		http://sourceforge.net/projects/wvware/
 Source0: 	http://downloads.sourceforge.net/wvware/%{name}-%{version}.tar.bz2
-Patch0:		wv2-0.2.3-gcc43.patch
 Patch1:		wv2-0.2.3-respectflags.patch
 BuildRequires:	libgsf-devel
 BuildRoot:	%{_tmppath}/%{name}-buildroot
@@ -48,8 +47,7 @@ This is the Wv2 development package.
 
 %prep
 %setup -q
-%patch0 -p0
-%patch1 -p1
+#%patch1 -p1
 
 %build
 ./autogen.sh
