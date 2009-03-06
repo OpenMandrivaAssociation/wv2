@@ -1,5 +1,5 @@
 %define name	wv2
-%define version	0.3.0
+%define version	0.3.1
 
 %define major		2
 %define libname		%mklibname %{name}_ %major
@@ -8,7 +8,7 @@
 Summary:	Word97 exporter library
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel 3
+Release:	%mkrel 1
 License:	LGPLv2
 Group:		Office
 URL:		http://sourceforge.net/projects/wvware/
