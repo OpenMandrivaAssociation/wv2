@@ -8,7 +8,7 @@
 Summary:	Word97 exporter library
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	LGPLv2
 Group:		Office
 URL:		http://sourceforge.net/projects/wvware/
@@ -60,12 +60,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %multiarch_binaries $RPM_BUILD_ROOT%{_bindir}/wv2-config
 
+rm -rf $RPM_BUILD_ROOT%{_libdir}/*.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files -n %libname
 %defattr(-,root,root)
-%_libdir/*.la
 %_libdir/*.so.%{major}*
 
 %files -n %develname
