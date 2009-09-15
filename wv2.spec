@@ -14,6 +14,7 @@ Group:		Office
 URL:		http://sourceforge.net/projects/wvware/
 Source0: 	http://downloads.sourceforge.net/wvware/%{name}-%{version}.tar.bz2
 Patch1:		wv2-0.4.0-fix-build.patch
+Patch2:		wv2-0.4.0-LIB_SUFFIX.patch
 BuildRequires:	libgsf-devel
 BuildRequires:  cmake
 BuildRoot:	%{_tmppath}/%{name}-buildroot
@@ -49,6 +50,7 @@ This is the Wv2 development package.
 %prep
 %setup -q
 %patch1 -p1
+%patch2 -p1 -b .libsuffix
 
 %build
 %define _disable_ld_no_undefined 1
