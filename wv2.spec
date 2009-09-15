@@ -15,6 +15,7 @@ URL:		http://sourceforge.net/projects/wvware/
 Source0: 	http://downloads.sourceforge.net/wvware/%{name}-%{version}.tar.bz2
 Patch1:		wv2-0.4.0-fix-build.patch
 BuildRequires:	libgsf-devel
+BuildRequires:  cmake
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
