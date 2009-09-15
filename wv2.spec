@@ -1,19 +1,19 @@
 %define name	wv2
-%define version	0.3.1
+%define version	0.4.0
 
-%define major		2
+%define major		3
 %define libname		%mklibname %{name}_ %major
 %define develname	%mklibname %{name} -d
 
 Summary:	Word97 exporter library
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel 2
+Release:	%mkrel 1
 License:	LGPLv2
 Group:		Office
 URL:		http://sourceforge.net/projects/wvware/
 Source0: 	http://downloads.sourceforge.net/wvware/%{name}-%{version}.tar.bz2
-Patch1:		wv2-0.2.3-respectflags.patch
+Patch1:		wv2-0.4.0-fix-build.patch
 BuildRequires:	libgsf-devel
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 
@@ -47,16 +47,16 @@ This is the Wv2 development package.
 
 %prep
 %setup -q
-#%patch1 -p1
+%patch1 -p1
 
 %build
-./autogen.sh
-%configure2_5x
+%define _disable_ld_no_undefined 1
+%cmake
 %make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%makeinstall_std
+%makeinstall_std -C build
 
 %multiarch_binaries $RPM_BUILD_ROOT%{_bindir}/wv2-config
 
@@ -72,9 +72,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -n %develname
 %defattr(-,root,root)
 %_includedir/%{name}
-
 %_libdir/*.so
-
 %_bindir/wv2-config
 %multiarch %{multiarch_bindir}/wv2-config
-
+%_libdir/wvWare
