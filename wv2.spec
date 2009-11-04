@@ -1,21 +1,19 @@
 %define name	wv2
-%define version	0.4.0
+%define version	0.4.2
 
-%define major		3
+%define major		4
 %define libname		%mklibname %{name}_ %major
 %define develname	%mklibname %{name} -d
 
 Summary:	Word97 exporter library
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel 4
+Release:	%mkrel 1
 License:	LGPLv2
 Group:		Office
 URL:		http://sourceforge.net/projects/wvware/
 Source0: 	http://downloads.sourceforge.net/wvware/%{name}-%{version}.tar.bz2
-Patch1:		wv2-0.4.0-fix-build.patch
-Patch2:		wv2-0.4.0-LIB_SUFFIX.patch
-Patch3:		wv2-0.4.0-linkage.patch
+Patch3:		wv2-0.4.2-linkage.patch
 BuildRequires:	libgsf-devel
 BuildRequires:  cmake
 BuildRoot:	%{_tmppath}/%{name}-buildroot
@@ -50,8 +48,6 @@ This is the Wv2 development package.
 
 %prep
 %setup -q
-%patch1 -p1
-%patch2 -p1 -b .libsuffix
 %patch3 -p0 -b .link
 
 %build
