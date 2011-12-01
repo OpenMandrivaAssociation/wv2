@@ -55,15 +55,15 @@ This is the Wv2 development package.
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std -C build
 
-%multiarch_binaries $RPM_BUILD_ROOT%{_bindir}/wv2-config
+%multiarch_binaries %{buildroot}%{_bindir}/wv2-config
 
-rm -rf $RPM_BUILD_ROOT%{_libdir}/*.la
+rm -rf %{buildroot}%{_libdir}/*.la
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files -n %libname
 %defattr(-,root,root)
