@@ -1,0 +1,12 @@
+diff -urN wv2-0.4.2/src/olestream.h wv2-0.4.2-patched/src/olestream.h
+--- wv2-0.4.2/src/olestream.h	2009-11-01 04:22:43.000000000 +1000
++++ wv2-0.4.2-patched/src/olestream.h	2012-09-05 02:15:28.991420989 +1100
+@@ -23,7 +23,7 @@
+ #include "global.h"  // U8,... typedefs
+ #include <stack>
+ 
+-#include <glib/giochannel.h> // GSeekType
++#include <glib.h> // GSeekType
+ 
+ namespace wvWare {
+ 
