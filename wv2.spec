@@ -5,7 +5,7 @@
 Summary:	Word97 exporter library
 Name:		wv2
 Version:	0.4.2
-Release:	8
+Release:	9
 License:	LGPLv2
 Group:		Office
 URL:		http://sourceforge.net/projects/wvware/
