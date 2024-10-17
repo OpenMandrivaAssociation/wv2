@@ -8,7 +8,7 @@ Version:	0.4.2
 Release:	12
 License:	LGPLv2
 Group:		Office
-URL:		http://sourceforge.net/projects/wvware/
+URL:		https://sourceforge.net/projects/wvware/
 Source0: 	http://downloads.sourceforge.net/wvware/%{name}-%{version}.tar.bz2
 Patch0:		wv2-0.4.2-glib.patch
 Patch3:		wv2-0.4.2-linkage.patch
